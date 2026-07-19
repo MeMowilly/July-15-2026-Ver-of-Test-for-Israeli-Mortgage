@@ -6,102 +6,32 @@
     <title>Israel Finance and Mortgage Company</title>
     <meta name="description" content="Moville Mortgage & Finance helps clients navigate mortgages and property financing in Israel.">
     <style>
-      /* --- Exact Wix @font-face Fonts Loaded --- */
-      @font-face {
-        font-family: 'Avenir Light';
-        src: url('https://static.parastorage.com/fonts/v2/af36905f-3c92-4ef9-b0c1-f91432f16ac1/v1/avenir-lt-w01_35-light1475496.woff2') format('woff2');
-      }
-      @font-face {
-        font-family: 'Avenir Heavy';
-        src: url('https://static.parastorage.com/fonts/v2/74290729-59ae-4129-87d0-2eec3974dce1/v1/avenir-lt-w01_85-heavy1475544.woff2') format('woff2');
-      }
-      @font-face {
-        font-family: 'Open Sans';
-        src: url('https://static.parastorage.com/fonts/v2/e59e6f5c-7ac5-47cf-8fe5-22ee5f11aa42/v1/open%20sans.woff2') format('woff2');
-      }
-      @font-face {
-        font-family: 'Wix Display';
-        src: url('https://static.wixstatic.com/ufonts/037d9d_5a6655619e1845c0a39029b819baaebb/woff2/file.woff2') format('woff2');
-      }
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
       :root {
-        --wix-blue: #0065A9;
-        --wix-navy: #003254;
-        --wix-dark-blue: #081163;
-        --wix-sky: #7FCCFF;
-        --wix-pale-blue: #CBE6F7;
-        --wix-card-border: #AADDFF;
-        --wix-gray-bg: #EDEDED;
-        --wix-form-bg: #F2F2F2;
-        --wix-contact-light: #D6D6D6;
-        --text-dark: #4A4A4A;
-        --text-muted: #717070;
+        --blue: #285a78;
+        --navy: #283f6f;
+        --text: #222222;
+        --muted: #666666;
         --white: #ffffff;
+        --light: #f7f7f7;
+        --border: #d8d8d8;
         --max: 980px;
+        --serif: Georgia, "Times New Roman", serif;
+        --sans: Arial, Helvetica, sans-serif;
+        --shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
       }
 
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
       body {
         margin: 0;
-        color: var(--text-dark);
+        color: var(--text);
         background: var(--white);
-        font-family: 'Avenir Light', Arial, sans-serif;
+        font-family: var(--sans);
         line-height: 1.5;
       }
       a { color: inherit; text-decoration: none; }
+      a:hover { color: #006ea6; }
       img { max-width: 100%; }
-
-      /* Global Button Overrides to Pill Layouts */
-      .wix-button-pill-sky {
-        background: var(--wix-sky);
-        color: var(--wix-navy);
-        font-family: 'Poppins', sans-serif;
-        font-size: 20px;
-        font-weight: 700;
-        display: inline-block;
-        padding: 12px 35px;
-        border-radius: 30px;
-        text-transform: uppercase;
-        border: none;
-        cursor: pointer;
-        transition: opacity 0.2s;
-      }
-      .wix-button-pill-sky:hover { opacity: 0.9; }
-
-      .wix-button-pill-navy {
-        background: var(--wix-navy);
-        color: var(--white);
-        font-family: 'Poppins', sans-serif;
-        font-size: 28px;
-        font-weight: 400;
-        line-height: 39.2px;
-        display: inline-block;
-        padding: 10px 40px;
-        border-radius: 40px;
-        text-transform: uppercase;
-        border: none;
-        cursor: pointer;
-        transition: opacity 0.2s;
-      }
-      .wix-button-pill-navy:hover { opacity: 0.9; }
-
-      .wix-button-standard {
-        background: var(--wix-navy);
-        border: 2px solid var(--wix-navy);
-        color: var(--white);
-        display: inline-block;
-        font-family: 'Poppins', sans-serif;
-        font-size: 16px;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        min-width: 150px;
-        padding: 13px 27px;
-        text-align: center;
-        text-transform: uppercase;
-      }
-      .wix-button-standard:hover { background: var(--white); color: var(--wix-navy); }
 
       /* Header & Topbar Layout */
       .topbar { background: var(--white); padding: 30px 24px 22px; }
@@ -113,28 +43,21 @@
         max-width: 960px;
       }
       .logo img { display: block; width: 205px; }
-      
       .contact-strip {
         align-items: center;
-        color: var(--text-dark);
+        color: #333;
         display: flex;
-        font-family: 'Avenir Light', Arial, sans-serif;
-        font-size: 13px;
+        font-size: 14px;
         gap: 9px;
         white-space: nowrap;
       }
-      .contact-strip span strong {
-        font-family: 'Avenir Heavy', Arial, sans-serif;
-        font-weight: 700;
-      }
-      .contact-strip a { text-decoration: none; color: var(--text-dark); }
-      .contact-strip a:hover { color: var(--wix-blue); }
-      .social-icon { height: 25px; width: 25px; vertical-align: middle; margin-left: 4px; }
+      .contact-strip a { text-decoration: underline; }
+      .social-icon { height: 25px; width: 25px; }
       
       /* Navigation Layer */
-      .main-nav-wrap { background: var(--white); border-bottom: 6px solid #305D80; position: relative; z-index: 100; }
+      .main-nav-wrap { background: var(--white); border-bottom: 6px solid var(--blue); position: relative; z-index: 100; }
       .nav-toggle {
-        background: #305D80;
+        background: var(--blue);
         border: 0;
         color: var(--white);
         cursor: pointer;
@@ -155,14 +78,12 @@
         min-height: 84px;
       }
       .site-nav a {
-        color: var(--text-dark);
-        font-family: 'Avenir Heavy', Arial, sans-serif;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 31px;
+        color: #252525;
+        font-size: 17px;
+        font-weight: 700;
         text-transform: uppercase;
       }
-      .site-nav a:hover, .site-nav a.active { color: var(--wix-blue); }
+      .site-nav a:hover { color: #006ea6; }
 
       /* --- Hero Slider Layout --- */
       .hero-carousel-container {
@@ -171,6 +92,7 @@
         min-height: 650px;
         height: 75vh;
         overflow: hidden;
+        background-color: #123e58;
       }
       .hero-slide {
         position: absolute;
@@ -193,12 +115,11 @@
         opacity: 1;
         visibility: visible;
       }
-      /* Cleaned background image stacks with target sampled blue overlays */
       .hero-slide-1 {
-        background-image: linear-gradient(rgba(15, 41, 58, 0.75), rgba(48, 93, 128, 0.75)), url("https://static.wixstatic.com/media/nsplsh_4d6f6c6865317151525749~mv2_d_6000_4000_s_4_2.jpg/v1/fill/w_1265,h_824,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nsplsh_4d6f6c6865317151525749~mv2_d_6000_4000_s_4_2.jpg");
+        background-image: linear-gradient(rgba(18, 62, 88, 0.82), rgba(18, 62, 88, 0.82)), url("https://static.wixstatic.com/media/nsplsh_4d6f6c6865317151525749~mv2_d_6000_4000_s_4_2.jpg/v1/fill/w_1265,h_824,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nsplsh_4d6f6c6865317151525749~mv2_d_6000_4000_s_4_2.jpg");
       }
       .hero-slide-2 {
-        background-image: linear-gradient(rgba(15, 41, 58, 0.75), rgba(48, 93, 128, 0.75)), url("https://static.wixstatic.com/media/nsplsh_ef8bc5b3a9004734a27a3360342e6487~mv2.jpg/v1/fill/w_1898,h_998,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nsplsh_ef8bc5b3a9004734a27a3360342e6487~mv2.jpg");
+        background-image: linear-gradient(rgba(18, 62, 88, 0.82), rgba(18, 62, 88, 0.82)), url("https://static.wixstatic.com/media/nsplsh_ef8bc5b3a9004734a27a3360342e6487~mv2.jpg/v1/fill/w_1898,h_998,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nsplsh_ef8bc5b3a9004734a27a3360342e6487~mv2.jpg");
       }
       .hero-content-box {
         color: var(--white);
@@ -207,16 +128,17 @@
       }
       .hero h1 {
         color: var(--white);
-        font-family: 'Open Sans', sans-serif;
-        font-size: 60px;
+        font-family: var(--serif);
+        font-size: clamp(2.5rem, 6vw, 5rem);
         font-weight: 400;
-        line-height: 72px;
+        letter-spacing: 0.07em;
+        line-height: 1.1;
         margin: 0 auto 35px;
+        text-transform: uppercase;
       }
       .hero p {
-        font-family: 'Avenir Light', Arial, sans-serif;
-        font-size: 24px;
-        line-height: 1.4;
+        font-size: clamp(1.2rem, 2.5vw, 2rem);
+        line-height: 1.3;
         margin: 0 auto 36px;
         max-width: 900px;
       }
@@ -228,6 +150,7 @@
         border: 0;
         color: rgba(255, 255, 255, 0.6);
         cursor: pointer;
+        font-family: var(--serif);
         font-size: 64px;
         z-index: 10;
         transition: color 0.2s;
@@ -236,47 +159,53 @@
       .hero-prev { left: 20px; }
       .hero-next { right: 20px; }
 
-      /* Mortgage CTA Band */
-      .mortgage-cta-section {
-        background-color: var(--wix-pale-blue);
-        padding: 64px 24px;
-      }
-      .mortgage-cta-section h2 {
-        color: var(--wix-dark-blue);
-        font-family: 'Poppins', sans-serif;
-        font-size: 36px;
+      /* Shared Elements */
+      .wix-button {
+        background: var(--navy);
+        border: 2px solid var(--navy);
+        color: var(--white);
+        display: inline-block;
+        font-size: 16px;
         font-weight: 700;
-        margin: 0 auto 24px;
+        letter-spacing: 0.05em;
+        min-width: 150px;
+        padding: 13px 27px;
+        text-align: center;
         text-transform: uppercase;
       }
-      .mortgage-cta-section p {
-        color: var(--wix-navy);
-        font-family: 'Avenir Light', Arial, sans-serif;
-        font-size: 30px;
-        font-weight: 700;
-        line-height: 48px;
-        margin: 0 auto 35px;
-        max-width: 850px;
-      }
-
-      /* Services Preview Cards */
-      .services-preview { background: var(--white); padding: 64px 24px; }
+      .wix-button:hover { background: var(--white); color: var(--navy); }
+      .section { padding: 64px 24px; }
       .section-inner { margin: 0 auto; max-width: var(--max); }
       .center { text-align: center; }
       
+      .lead-block h2 {
+        color: var(--navy);
+        font-size: clamp(2rem, 5vw, 3.8rem);
+        font-weight: 700;
+        line-height: 1.15;
+        margin: 0 auto 24px;
+        max-width: 880px;
+        text-transform: uppercase;
+      }
+      .lead-block p {
+        color: #4a4a4a;
+        font-size: 20px;
+        margin: 0 auto 28px;
+        max-width: 760px;
+      }
+      
+      /* Services Blocks */
+      .services-preview { background: var(--light); }
       .service-grid {
         display: grid;
-        gap: 30px;
+        gap: 40px;
         grid-template-columns: repeat(4, 1fr);
       }
       .service-card {
         background: var(--white);
-        border: 1px solid var(--wix-card-border);
         min-height: 330px;
         padding: 32px 18px;
         text-align: center;
-        text-decoration: none;
-        display: block;
       }
       .service-card img {
         display: block;
@@ -284,26 +213,14 @@
         margin: 0 auto 24px;
         object-fit: contain;
       }
-      .service-card h3 { 
-        color: var(--wix-blue); 
-        font-family: 'Poppins', sans-serif;
-        font-size: 15px; 
-        font-weight: 400;
-        line-height: 21px;
-        margin: 0 0 18px; 
-      }
-      .service-card p { 
-        color: var(--text-dark); 
-        font-family: 'Avenir Light', Arial, sans-serif;
-        font-size: 12px; 
-        font-weight: 700;
-        line-height: 16.8px;
-        margin: 0; 
-      }
+      .service-card h3 { color: var(--navy); font-size: 22px; margin: 0 0 18px; }
+      .service-card p { color: #4d4d4d; font-size: 16px; margin: 0; }
 
-      /* About Us & Generic Page Heros */
       .page-hero {
         align-items: center;
+        background:
+          linear-gradient(rgba(41, 79, 103, 0.78), rgba(41, 79, 103, 0.78)),
+          url("https://static.wixstatic.com/media/nsplsh_ef8bc5b3a9004734a27a3360342e6487~mv2.jpg/v1/fill/w_1898,h_998,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nsplsh_ef8bc5b3a9004734a27a3360342e6487~mv2.jpg");
         background-position: center;
         background-size: cover;
         color: var(--white);
@@ -313,125 +230,81 @@
         padding: 70px 24px;
         text-align: center;
       }
-      .about-hero-bg {
-        background-image: linear-gradient(rgba(31, 69, 74, 0.8), rgba(9, 42, 61, 0.8)), url("https://static.wixstatic.com/media/nsplsh_ef8bc5b3a9004734a27a3360342e6487~mv2.jpg/v1/fill/w_1898,h_998,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nsplsh_ef8bc5b3a9004734a27a3360342e6487~mv2.jpg");
-      }
-      .services-hero-bg {
-        background-image: linear-gradient(rgba(31, 70, 75, 0.8), rgba(8, 43, 61, 0.8)), url("https://static.wixstatic.com/media/nsplsh_ef8bc5b3a9004734a27a3360342e6487~mv2.jpg/v1/fill/w_1898,h_998,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nsplsh_ef8bc5b3a9004734a27a3360342e6487~mv2.jpg");
-      }
-      
       .page-hero h1 {
         color: var(--white);
-        font-family: 'Wix Display', sans-serif;
-        font-size: 75px;
+        font-family: var(--serif);
+        font-size: clamp(3.2rem, 8vw, 7rem);
         font-weight: 400;
-        line-height: 1.1;
-        margin: 0 auto 20px;
+        letter-spacing: 0.06em;
+        line-height: 1.05;
+        margin: 0 auto 30px;
+        max-width: 900px;
         text-transform: uppercase;
-        text-shadow: 2px 2px 0px var(--text-muted);
       }
-      .page-hero p.expressive-subtitle { 
-        font-family: Georgia, serif;
-        font-style: italic;
-        font-size: 25px; 
-        margin: 0 auto 28px; 
-        max-width: 760px; 
-      }
+      .page-hero p { font-size: 24px; margin: 0 auto 28px; max-width: 760px; }
       
-      /* About Content Area */
-      .about-content-panel {
-        background: var(--wix-navy);
-        color: var(--white);
-        font-family: 'Avenir Light', Arial, sans-serif;
-        font-size: 30px;
-        line-height: 1.6;
+      .content-panel {
+        background: var(--white);
+        font-size: 20px;
         margin: 0 auto;
+        max-width: 930px;
         padding: 62px 24px;
         text-align: center;
       }
-      .about-content-panel p { margin: 0 auto 30px; max-width: 820px; }
-      .about-content-panel a { color: var(--wix-sky); text-decoration: underline; }
+      .content-panel p { margin: 0 auto 24px; max-width: 820px; }
       
-      /* Services Main Page Section */
-      .services-intro-section { text-align: center; padding: 64px 24px; background-color: var(--wix-navy); color: var(--white); }
-      .services-intro-section .eyebrow {
-        color: var(--white);
-        font-family: 'Avenir Heavy', Arial, sans-serif;
-        font-size: 30px;
-        margin-bottom: 5px;
+      .services-intro { text-align: center; }
+      .services-intro .small {
+        color: var(--navy);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        margin-bottom: 12px;
         text-transform: uppercase;
       }
-      .services-intro-section h1.concierge-title {
-        font-family: Georgia, serif;
-        font-style: italic;
-        font-size: 50px;
-        margin: 0 0 25px;
-        color: var(--white);
+      .services-intro h1 {
+        color: var(--navy);
+        font-family: var(--serif);
+        font-size: clamp(3rem, 7vw, 6.3rem);
+        font-weight: 400;
+        line-height: 1.05;
+        margin: 0 0 28px;
       }
-      .services-intro-section p.intro-body {
-        font-family: 'Avenir Light', Arial, sans-serif;
-        font-size: 30px;
-        margin: 0 auto 35px;
+      .services-intro p {
+        color: #4a4a4a;
+        font-size: 21px;
+        margin: 0 auto 30px;
         max-width: 850px;
-        color: var(--white);
       }
       
-      /* Services Detail Rows */
-      .service-list-wrap { background-color: var(--white); padding: 54px 24px; }
-      .service-list { display: grid; gap: 42px; }
+      .service-list { display: grid; gap: 42px; margin-top: 54px; }
       .service-detail {
         align-items: start;
         display: grid;
         gap: 34px;
         grid-template-columns: 105px 270px 1fr;
-        background: var(--wix-gray-bg);
-        padding: 30px;
       }
       .service-detail img { width: 86px; }
       .service-detail h2 {
-        color: var(--text-dark);
-        font-family: 'Poppins', sans-serif;
-        font-size: 20px;
-        line-height: 24px;
-        font-weight: 400;
+        color: var(--navy);
+        font-size: 32px;
+        line-height: 1.05;
         margin: 0;
         text-transform: uppercase;
       }
-      .service-detail p { 
-        color: var(--text-dark); 
-        font-family: 'Avenir Light', Arial, sans-serif;
-        font-size: 15px; 
-        line-height: 22.4px;
-        margin: 0; 
-      }
+      .service-detail p { color: #333; font-size: 18px; margin: 0; }
 
-      /* Unified Testimonials Band Header Style */
-      .testimonials-heading-band {
-        background: var(--wix-navy);
-        padding: 40px 24px;
-      }
-      .testimonials-heading-band h2 {
-        color: var(--white);
-        font-family: 'Avenir Heavy', Arial, sans-serif;
-        font-size: 45px;
+      /* --- Updated Screenshot Testimonials Carousel --- */
+      .testimonial-section { background: var(--light); padding: 80px 24px; }
+      .testimonial-section h2 {
+        color: var(--navy);
+        font-family: var(--serif);
+        font-size: clamp(2rem, 5vw, 3.2rem);
         font-weight: 400;
-        margin: 0;
-      }
-      .testimonials-cta-band {
-        background: var(--wix-navy);
-        padding: 30px 24px;
-        text-align: center;
-      }
-      .testimonials-cta-band h3 {
-        color: var(--white);
-        font-family: 'Poppins', sans-serif;
-        font-size: 20px;
-        font-weight: 700;
-        margin: 0;
+        margin: 0 0 45px;
         text-transform: uppercase;
+        letter-spacing: 0.05em;
       }
-
-      .testimonial-carousel-section { background: var(--wix-gray-bg); padding: 50px 24px 80px; }
       .testimonial-carousel {
         align-items: center;
         display: grid;
@@ -450,22 +323,33 @@
         margin: 0 auto;
         background: #fff;
         border: 1px solid #d4dbe4;
+        box-shadow: var(--shadow);
         padding: 12px;
         border-radius: 8px;
       }
       .screenshot-slide.is-active { display: block; }
-      .screenshot-slide img { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 4px; }
+      .screenshot-slide img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 4px;
+      }
 
       .carousel-button {
         background: transparent;
         border: 0;
-        color: var(--wix-navy);
+        color: var(--navy);
         cursor: pointer;
+        font-family: var(--serif);
         font-size: 58px;
         line-height: 1;
+        transition: color 0.2s;
         user-select: none;
       }
-      .carousel-button:hover { color: var(--wix-blue); }
+      .carousel-button:hover { color: var(--blue); }
+      .carousel-prev { left: 0; }
+      .carousel-next { right: 0; }
       
       .carousel-dots {
         display: flex;
@@ -483,81 +367,54 @@
         height: 12px;
         padding: 0;
         width: 12px;
+        transition: background-color 0.2s;
       }
-      .carousel-dots button.is-active { background: var(--wix-navy); }
+      .carousel-dots button.is-active { background: var(--navy); }
 
-      /* Form Sizing */
-      .embedded-form-page { background: var(--wix-form-bg); padding: 30px 12px; }
-      .google-form-embed { border: 0; display: block; margin: 0 auto; max-width: 1040px; background-color: var(--white); }
-      
-      /* Contact Layout split styling */
+      /* Form & Sub-sections */
+      .embedded-form-page { background: #f0f0f0; padding: 0 12px 34px; }
+      .google-form-embed {
+        border: 0;
+        display: block;
+        margin: 0 auto;
+        max-width: 1040px;
+      }
       .contact-layout {
         display: grid;
+        gap: 60px;
         grid-template-columns: 0.9fr 1.1fr;
       }
-      .contact-left-box {
-        background-color: var(--wix-navy);
-        color: var(--white);
-        padding: 60px 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+      .contact-details {
+        color: var(--navy);
+        font-size: 24px;
+        line-height: 1.8;
         text-align: center;
       }
-      .contact-details-text {
-        font-family: 'Avenir Light', Arial, sans-serif;
-        font-size: 16px;
-        line-height: 27.2px;
-      }
-      .contact-details-text a {
-        color: var(--white);
-        text-decoration: none;
-      }
-      .contact-details-text .email-bold {
-        font-family: 'Avenir Heavy', Arial, sans-serif;
-        font-weight: 700;
-        text-transform: uppercase;
-      }
-      .contact-right-box {
-        background-color: var(--wix-contact-light);
-        padding: 60px 40px;
-      }
+      .contact-details a { text-decoration: underline; }
       .contact-form { display: grid; gap: 14px; }
-      
-      .contact-form h2.layered-title {
-        color: var(--white);
-        font-family: 'Wix Display', sans-serif;
-        font-size: 38px;
-        font-weight: 700;
-        line-height: 45.6px;
-        margin: 0 0 5px;
-        text-align: center;
-        text-shadow: 1px 1px 0px var(--text-muted);
-      }
-      .contact-form h3.sub-title {
-        color: var(--text-muted);
-        font-family: 'Open Sans', sans-serif;
-        font-size: 38px;
+      .contact-form h2 {
+        color: var(--navy);
+        font-family: var(--serif);
+        font-size: 46px;
         font-weight: 400;
-        line-height: 45.6px;
-        margin: 0 0 20px;
+        line-height: 1.05;
+        margin: 0 0 12px;
         text-align: center;
       }
-      .contact-form input, .contact-form textarea {
+      .contact-form input,
+      .contact-form textarea {
         border: 1px solid #999;
         font: inherit;
         padding: 12px;
         width: 100%;
-        background-color: var(--white);
       }
       .contact-form textarea { min-height: 120px; resize: vertical; }
-      .form-note { color: var(--text-dark); font-size: 14px; margin: 0; }
+      .form-note { color: var(--muted); font-size: 14px; margin: 0; }
 
-      /* Footer Area styling */
       .site-footer {
         background: var(--white);
         border-top: 1px solid #e5e5e5;
-        color: var(--text-dark);
+        color: #444;
         padding: 34px 24px 48px;
         text-align: center;
       }
@@ -568,13 +425,6 @@
         justify-content: center;
         margin-bottom: 18px;
       }
-      .site-footer p.copy-text {
-        font-family: Arial, sans-serif;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 16.8px;
-        margin: 0 0 15px;
-      }
       .footer-nav {
         display: flex;
         flex-wrap: wrap;
@@ -582,37 +432,31 @@
         justify-content: center;
         margin-top: 20px;
       }
-      .footer-nav a { 
-        font-family: 'Avenir Heavy', Arial, sans-serif;
-        font-size: 13px; 
-        font-weight: 400; 
-        line-height: 18.2px;
-        color: var(--wix-blue);
-        text-transform: uppercase; 
-      }
+      .footer-nav a { font-size: 14px; font-weight: 700; text-transform: uppercase; }
 
-      /* Responsive Adaptations */
+      /* Responsive Media Adaptations */
       @media (max-width: 900px) {
         .topbar-inner { align-items: flex-start; flex-direction: column; gap: 18px; }
         .contact-strip { flex-wrap: wrap; white-space: normal; }
         .nav-toggle { display: block; }
         .site-nav { display: none; flex-direction: column; gap: 0; min-height: 0; padding: 0; }
         .site-nav.is-open { display: flex; }
-        .site-nav a { border-top: 1px solid #d8d8d8; padding: 16px; text-align: center; width: 100%; }
+        .site-nav a { border-top: 1px solid var(--border); padding: 16px; text-align: center; width: 100%; }
         .service-grid { grid-template-columns: repeat(2, 1fr); }
-        .service-detail { grid-template-columns: 1fr; text-align: center; }
+        .service-detail, .contact-layout { grid-template-columns: 1fr; text-align: center; }
         .service-detail img { margin: 0 auto; }
-        .contact-layout { grid-template-columns: 1fr; }
-        .hero h1 { font-size: 40px; line-height: 48px; }
-        .page-hero h1 { font-size: 46px; }
         .hero-carousel-container { height: 60vh; min-height: 480px; }
         .testimonial-carousel { grid-template-columns: 42px 1fr 42px; }
         .carousel-track { min-height: 260px; }
+        .screenshot-slide { padding: 8px; }
       }
 
       @media (max-width: 560px) {
+        .topbar { padding-top: 20px; }
         .logo img { width: 178px; }
+        .hero-carousel-container { min-height: 440px; }
         .service-grid { grid-template-columns: 1fr; }
+        .contact-strip { font-size: 13px; }
       }
     </style>
   </head>
@@ -624,10 +468,10 @@
             <img src="https://static.wixstatic.com/media/683a98_69417a2a31e76ea6e9c3d2ca92005860.jpg/v1/fill/w_201,h_68,al_c,q_80,enc_avif,quality_auto/683a98_69417a2a31e76ea6e9c3d2ca92005860.jpg" alt="Moville Mortgage and Finance">
           </a>
           <div class="contact-strip">
-            <span>Contact: <strong>IL</strong></span>
+            <span>Contact: IL</span>
             <a href="tel:+972737962226">054 522 6701</a>
             <span>|</span>
-            <span><strong>US</strong></span>
+            <span>US</span>
             <a href="tel:+12013773418">(208) 668-4553</a>
             <a href="https://www.linkedin.com/company/moville-mortgage-&-finance/" aria-label="LinkedIn">
               <img class="social-icon" src="https://static.wixstatic.com/media/48a2a42b19814efaa824450f23e8a253.png/v1/fill/w_25,h_25,al_c,q_85,enc_avif,quality_auto/48a2a42b19814efaa824450f23e8a253.png" alt="">
@@ -641,7 +485,7 @@
       <div class="main-nav-wrap">
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
         <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-          <a href="#home" class="active">Home</a>
+          <a href="#home">Home</a>
           <a href="#about">About Us</a>
           <a href="#services">Services</a>
           <a href="#testimonials">Testimonials</a>
@@ -655,9 +499,9 @@
       <section class="hero-carousel-container hero" id="home">
         <div class="hero-slide hero-slide-1 is-active" data-hero-slide>
           <div class="hero-content-box">
-            <h1>We handle every stage...</h1>
+            <h1>Moville Mortgage<br>&amp; Finance ltd</h1>
             <p>We guide you from the moment you make the decision you want to buy a property in Israel (this can be long before you have actually found a property)</p>
-            <a class="wix-button-pill-sky" href="#application">Apply Now</a>
+            <a class="wix-button" href="#application">Apply Now</a>
           </div>
         </div>
 
@@ -665,7 +509,7 @@
           <div class="hero-content-box">
             <h1>Expert Mortgage Solutions</h1>
             <p>Navigating competitive options and real-time bank tracking to find the optimal financing fit for your investments.</p>
-            <a class="wix-button-pill-sky" href="#services">Our Services</a>
+            <a class="wix-button" href="#services">Our Services</a>
           </div>
         </div>
 
@@ -673,17 +517,15 @@
         <button class="hero-arrow hero-next" type="button" aria-label="Next Slide" data-hero-next>&rsaquo;</button>
       </section>
 
-      <!-- Updated Mortgage CTA band -->
-      <section class="mortgage-cta-section center">
+      <section class="section lead-block center">
         <div class="section-inner">
-          <h2>IF YOU'RE THINKING ABOUT A MORTGAGE IN ISRAEL</h2>
-          <p>It's never too early to apply... Find out if you're qualified for a mortgage by filling out our initial form</p>
-          <a class="wix-button-pill-navy" href="#application">Find Out Here</a>
+          <h2>If you're thinking about a mortgage in Israel</h2>
+          <p>It's never too early to apply! Find out if you're qualified for a mortgage by filling out our initial form</p>
+          <a class="wix-button" href="#application">Find Out Here</a>
         </div>
       </section>
 
-      <!-- Updated Service Preview Grid with Borders and Precise Sizes -->
-      <section class="services-preview">
+      <section class="section services-preview">
         <div class="section-inner">
           <div class="service-grid">
             <a class="service-card" href="#services">
@@ -710,38 +552,28 @@
         </div>
       </section>
 
-      <!-- Updated About Us Layer -->
-      <section class="page-hero about-hero-bg" id="about">
+      <section class="page-hero" id="about">
         <div>
           <h1>About Us</h1>
-          <p class="expressive-subtitle">You can rely on Moville Mortgage and Finance...</p>
-          <a class="wix-button-pill-sky" href="#application">Apply Now</a>
+          <p>You can rely on Moville Mortgage and Finance as our past clients have a resource for guidance and peace of mind before, during, and after their Israeli mortgage experience.</p>
+          <a class="wix-button" href="#application">Apply Now</a>
         </div>
       </section>
 
-      <section class="about-content-panel">
+      <section class="content-panel">
         <p>Clients often work with us long before they start looking for a property to buy in Israel because we help them understand the mortgage options available to them as well as educate them about possible ramifications and assist them in making informed decisions in choosing the mortgage options best suited for them.</p>
         <p>No one says it better than our previous clients. <a href="#testimonials">See what they have to say about their Moville experience.</a></p>
         <p>Let us help you successfully navigate the Israel mortgage market with confidence and peace of mind.</p>
-      </section>
-      
-      <div class="testimonials-cta-band">
-        <h3>HEAR WHAT OUR CLIENTS HAVE TO SAY</h3>
-      </div>
-
-      <!-- Updated Services Intro Layout -->
-      <section class="services-intro-section" id="services">
-        <div class="section-inner">
-          <p class="eyebrow">Our clients call us</p>
-          <h1 class="concierge-title">Their Financial Concierge</h1>
-          <p class="intro-body">Whatever you call us, our mission is giving you piece of mind while helping you understand the Israeli mortgage process and arranging a mortgage for you that fits your needs, while saving you money and time.</p>
-          <a class="wix-button-pill-sky" href="#application">Apply Now</a>
-        </div>
+        <a class="wix-button" href="#testimonials">Hear What Our Clients Have To Say</a>
       </section>
 
-      <!-- Updated Services List with Shaded Background Boxes -->
-      <div class="service-list-wrap">
+      <section class="section services-intro" id="services">
         <div class="section-inner">
+          <p class="small">Our clients call us</p>
+          <h1>Their Financial Concierge</h1>
+          <p>Whatever you call us, our mission is giving you piece of mind while helping you understand the Israeli mortgage process and arranging a mortgage for you that fits your needs, while saving you money and time.</p>
+          <a class="wix-button" href="#application">Apply Now</a>
+
           <div class="service-list">
             <article class="service-detail">
               <img src="https://static.wixstatic.com/media/04af08_1b50e2174e9040179a54f4d38addd38d~mv2.png/v1/fill/w_164,h_170,al_c,q_85,enc_avif,quality_auto/Asset%208_4x.png" alt="">
@@ -765,31 +597,52 @@
             </article>
           </div>
         </div>
-      </div>
-
-      <!-- Updated Testimonials Background Banner Layout -->
-      <section class="testimonials-heading-band center" id="testimonials">
-        <h2>Hear what our clients have to say</h2>
       </section>
 
-      <section class="testimonial-carousel-section center">
+      <!-- --- Re-engineered Testimonials Panel with 12 Local JPEGs --- -->
+      <section class="section testimonial-section center" id="testimonials">
         <div class="section-inner">
+          <h2>Hear what our clients have to say</h2>
           <div class="testimonial-carousel" data-carousel="testimonials">
             <button class="carousel-button carousel-prev" type="button" aria-label="Previous testimonial" data-carousel-prev>&lsaquo;</button>
             
             <div class="carousel-track">
-              <div class="screenshot-slide is-active" data-carousel-slide><img src="screenshot1.jpg" alt="Client Testimonial 1"></div>
-              <div class="screenshot-slide" data-carousel-slide><img src="screenshot2.jpg" alt="Client Testimonial 2"></div>
-              <div class="screenshot-slide" data-carousel-slide><img src="screenshot3.jpg" alt="Client Testimonial 3"></div>
-              <div class="screenshot-slide" data-carousel-slide><img src="screenshot4.jpg" alt="Client Testimonial 4"></div>
-              <div class="screenshot-slide" data-carousel-slide><img src="screenshot5.jpg" alt="Client Testimonial 5"></div>
-              <div class="screenshot-slide" data-carousel-slide><img src="screenshot6.jpg" alt="Client Testimonial 6"></div>
-              <div class="screenshot-slide" data-carousel-slide><img src="screenshot7.jpg" alt="Client Testimonial 7"></div>
-              <div class="screenshot-slide" data-carousel-slide><img src="screenshot8.jpg" alt="Client Testimonial 8"></div>
-              <div class="screenshot-slide" data-carousel-slide><img src="screenshot9.jpg" alt="Client Testimonial 9"></div>
-              <div class="screenshot-slide" data-carousel-slide><img src="screenshot10.jpg" alt="Client Testimonial 10"></div>
-              <div class="screenshot-slide" data-carousel-slide><img src="screenshot11.jpg" alt="Client Testimonial 11"></div>
-              <div class="screenshot-slide" data-carousel-slide><img src="screenshot12.jpg" alt="Client Testimonial 12"></div>
+              <div class="screenshot-slide is-active" data-carousel-slide>
+                <img src="screenshot1.jpg" alt="Client Testimonial 1">
+              </div>
+              <div class="screenshot-slide" data-carousel-slide>
+                <img src="screenshot2.jpg" alt="Client Testimonial 2">
+              </div>
+              <div class="screenshot-slide" data-carousel-slide>
+                <img src="screenshot3.jpg" alt="Client Testimonial 3">
+              </div>
+              <div class="screenshot-slide" data-carousel-slide>
+                <img src="screenshot4.jpg" alt="Client Testimonial 4">
+              </div>
+              <div class="screenshot-slide" data-carousel-slide>
+                <img src="screenshot5.jpg" alt="Client Testimonial 5">
+              </div>
+              <div class="screenshot-slide" data-carousel-slide>
+                <img src="screenshot6.jpg" alt="Client Testimonial 6">
+              </div>
+              <div class="screenshot-slide" data-carousel-slide>
+                <img src="screenshot7.jpg" alt="Client Testimonial 7">
+              </div>
+              <div class="screenshot-slide" data-carousel-slide>
+                <img src="screenshot8.jpg" alt="Client Testimonial 8">
+              </div>
+              <div class="screenshot-slide" data-carousel-slide>
+                <img src="screenshot9.jpg" alt="Client Testimonial 9">
+              </div>
+              <div class="screenshot-slide" data-carousel-slide>
+                <img src="screenshot10.jpg" alt="Client Testimonial 10">
+              </div>
+              <div class="screenshot-slide" data-carousel-slide>
+                <img src="screenshot11.jpg" alt="Client Testimonial 11">
+              </div>
+              <div class="screenshot-slide" data-carousel-slide>
+                <img src="screenshot12.jpg" alt="Client Testimonial 12">
+              </div>
             </div>
 
             <button class="carousel-button carousel-next" type="button" aria-label="Next testimonial" data-carousel-next>&rsaquo;</button>
@@ -812,14 +665,9 @@
         </div>
       </section>
 
-      <div class="testimonials-cta-band">
-        <h3>HEAR WHAT OUR CLIENTS HAVE TO SAY</h3>
-      </div>
-
-      <section class="page-hero services-hero-bg" id="application">
+      <section class="page-hero" id="application">
         <div>
-          <h1>Moville Mortgage</h1>
-          <p class="expressive-subtitle">Application Form</p>
+          <h1>Moville Mortgage<br>Application Form</h1>
         </div>
       </section>
 
@@ -837,32 +685,28 @@
         </iframe>
       </section>
 
-      <div class="testimonials-cta-band">
-        <h3>HEAR WHAT OUR CLIENTS HAVE TO SAY</h3>
-      </div>
+      <section class="page-hero" id="contact">
+        <div>
+          <h1>Contact<br>Us</h1>
+        </div>
+      </section>
 
-      <!-- Updated Split Contact Section Layout -->
-      <section id="contact">
-        <div class="contact-layout">
-          <div class="contact-left-box">
-            <div class="contact-details-text">
-              <p>Israel: <a href="tel:+972737962226">073-796-2226</a></p>
-              <p>US: <a href="tel:+12013773418">201-377-3418</a></p>
-              <p><a href="mailto:info@movillefinance.com?subject=Website%20Inquiry" class="email-bold">INFO@MOVILLEFINANCE.COM</a></p>
-            </div>
+      <section class="section">
+        <div class="section-inner contact-layout">
+          <div class="contact-details">
+            <p>Israel: <a href="tel:+972737962226">073-796-2226</a></p>
+            <p>US: <a href="tel:+12013773418">201-377-3418</a></p>
+            <p><a href="mailto:info@movillefinance.com?subject=Would%20Love%20to%20Hear%20More%20About%20Your%20Services">INFO@MOVILLEFINANCE.COM</a></p>
           </div>
-          <div class="contact-right-box">
-            <form class="contact-form" data-mail-form>
-              <h2 class="layered-title">Contact Us</h2>
-              <h3 class="sub-title">We Would Love To Hear From You</h3>
-              <input name="name" placeholder="Name" required>
-              <input type="email" name="email" placeholder="Email" required>
-              <input name="phone" placeholder="Phone">
-              <textarea name="message" placeholder="Message" required></textarea>
-              <button class="wix-button-standard" type="submit">Submit</button>
-              <p class="form-note">This static form opens your email app addressed to info@movillefinance.com.</p>
-            </form>
-          </div>
+          <form class="contact-form" data-mail-form>
+            <h2>We Would Love<br>To Hear From You</h2>
+            <input name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input name="phone" placeholder="Phone">
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button class="wix-button" type="submit">Submit</button>
+            <p class="form-note">This static form opens your email app addressed to info@movillefinance.com.</p>
+          </form>
         </div>
       </section>
     </main>
@@ -872,7 +716,7 @@
         <a href="https://il.linkedin.com/in/moshewilshinsky" aria-label="LinkedIn"><img class="social-icon" src="https://static.wixstatic.com/media/48a2a42b19814efaa824450f23e8a253.png/v1/fill/w_20,h_20,al_c,q_85,enc_avif,quality_auto/48a2a42b19814efaa824450f23e8a253.png" alt=""></a>
         <a href="https://www.facebook.com/Moville-Mortgage-%20Finance-141629142652921/?epa=SEARCH_BOX" aria-label="Facebook"><img class="social-icon" src="https://static.wixstatic.com/media/e316f544f9094143b9eac01f1f19e697.png/v1/fill/w_20,h_20,al_c,q_85,enc_avif,quality_auto/e316f544f9094143b9eac01f1f19e697.png" alt=""></a>
       </div>
-      <p class="copy-text">Moville Finance | Copyright 2026</p>
+      <p>Moville Finance | Copyright 2026</p>
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="#home">Home</a>
         <a href="#about">About Us</a>
@@ -908,7 +752,8 @@
         });
       });
 
-      // Top Hero Panel Carousel
+      // --- Fully Independent Carousel Engines ---
+      // 1. Top Hero Panel Carousel
       const heroContainer = document.querySelector('.hero-carousel-container');
       if (heroContainer) {
         const slides = Array.from(heroContainer.querySelectorAll('[data-hero-slide]'));
@@ -928,7 +773,7 @@
         setInterval(() => showHeroSlide(currentHero + 1), 7000);
       }
 
-      // Testimonials Carousel (Handles all 12 Screenshot Slides cleanly)
+      // 2. Testimonials Carousel (Handles all 12 Screenshot Slides cleanly)
       const testCarousel = document.querySelector('[data-carousel="testimonials"]');
       if (testCarousel) {
         const slides = Array.from(testCarousel.querySelectorAll('[data-carousel-slide]'));
