@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fast Dynamic Product Catalog</title>
+  
+  <!-- Critical CSS Inlined in Head for Zero Layout Shift & Fast First Render -->
+  <style>
+    /* Reset & CSS Variables */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-color: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-color: #212529;
+      --border-color: #e9ecef;
+      --primary-color: #0066cc;
+      --primary-hover: #004999;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    /* Dynamic Grid Shell */
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Product Card Styling with fixed sizing to prevent layout shift */
+    .product-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .product-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-price {
+      font-size: 1.25rem;
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .product-description {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      background-color: var(--primary-color);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: var(--primary-hover);
+    }
+
+    /* Loading & State Notices */
+    .status-msg {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 1.1rem;
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Fast Static Catalog + Dynamic API Data</h1>
+      <p>Fetches real-time structured data via client-side JavaScript without dynamic backend servers.</p>
+    </header>
+
+    <!-- Content Target Shell -->
+    <main class="catalog-grid" id="catalog-container">
+      <div class="status-msg" id="status-msg">Loading products...</div>
+    </main>
+  </div>
+
+  <!-- Dynamic Fetch Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Dummy REST API Endpoint for structured product JSON
+      const API_URL = "https://dummyjson.com/products?limit=8";
+
+      const catalogContainer = document.getElementById("catalog-container");
+      const statusMsg = document.getElementById("status-msg");
+
+      async function loadProducts() {
+        try {
+          // 1. Fetch JSON Data
+          const response = await fetch(API_URL);
+          if (!response.ok) {
+            throw new Error(`HTTP Error: ${response.status}`);
+          }
+
+          const data = await response.json();
+          const products = data.products;
+
+          // 2. Clear status loader
+          catalogContainer.innerHTML = "";
+
+          if (!products || products.length === 0) {
+            catalogContainer.innerHTML = '<div class="status-msg">No products found.</div>';
+            return;
+          }
+
+          // 3. Batch render items using DocumentFragment for maximum performance
+          const fragment = document.createDocumentFragment();
+
+          products.forEach((product) => {
+            const card = document.createElement("article");
+            card.className = "product-card";
+
+            card.innerHTML = `
+              <div>
+                <h2 class="product-title">${escapeHTML(product.title)}</h2>
+                <div class="product-price">$${product.price.toFixed(2)}</div>
+                <p class="product-description">${escapeHTML(product.description)}</p>
+              </div>
+              <button class="btn" onclick="alert('Added ${escapeHTML(product.title)} to cart!')">Add to Cart</button>
+            `;
+
+            fragment.appendChild(card);
+          });
+
+          // 4. Inject into DOM in a single write operation
+          catalogContainer.appendChild(fragment);
+
+        } catch (error) {
+          console.error("Failed to load products:", error);
+          catalogContainer.innerHTML = '<div class="status-msg">Error loading products. Please try again later.</div>';
+        }
+      }
+
+      // Basic XSS Prevention Helper
+      function escapeHTML(str) {
+        return str.replace(/[&<>'"]/g, 
+          tag => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            "'": '&#39;',
+            '"': '&quot;'
+          }[tag] || tag)
+        );
+      }
+
+      loadProducts();
+    });
+  </script>
+</body>
+</html>
